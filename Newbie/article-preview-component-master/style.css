@@ -13,12 +13,155 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
+  font-size: var(--Font-size);
+}
+
+body {
+  background-color: var(--Light-Grayish-Blue);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 65%;
+}
+
+.img {
+  width: 100%;
+}
+
+.img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+
+.content {
+  padding: 70px;
+  background-color: #fff;
+  border-radius: 0 10px 10px 0;
+}
+
+.content h2 {
+  color: var(--Very-Dark-Grayish-Blue);
+  font-weight: 700;
+  font-size: 2.8rem;
+  width: 90%;
+}
+
+.content > p {
+  color: var(--Desaturated-Dark-Blue);
+  margin: 40px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile-info h3 {
+  color: var(--Very-Dark-Grayish-Blue);
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.profile-info p {
+  color: var(--Grayish-Blue);
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+.profile-container button {
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: var(--Very-Dark-Grayish-Blue);
 }
 
 .attribution {
-  font-size: 11px;
+  font-size: 15px;
   text-align: center;
+  color: var(--Desaturated-Dark-Blue);
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--Very-Dark-Grayish-Blue);
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    height: 90vh;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 30px;
+    background-color: #fff;
+  }
+  .img {
+    width: 100%;
+  }
+  .img img {
+    height: auto;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  .content {
+    padding: 30px 30px 20px 30px;
+    border-radius: 0 0 10px 10px;
+  }
+  .content h2 {
+    font-size: 1.18rem;
+  }
+  .content > p {
+    margin: 20px 0;
+    font-size: .9rem;
+    line-height: 1.4;
+  }
+
+  .profile img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .profile-info h3 {
+    font-size: 1rem;
+  }
+
+  .profile-info p {
+    font-size: 1rem;
+  }
+
+  .profile-container button {
+    padding: 8px;
+  }
+  .attribution {
+    margin-top: 20px;
+  }
 }
