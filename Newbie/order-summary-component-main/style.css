@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+:root  {
+  --Pale-blue: hsl(225, 100%, 94%);
+  --Bright-blue: hsl(245, 75%, 52%);
+  --Very-pale-blue: hsl(225, 100%, 98%);
+  --Desaturated-blue: hsla(224, 23%, 55%);
+  --Dark-blue: hsl(223, 47%, 23%);
+  --Font-size: 16px; /* (paragraph) */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: var(--Font-size);
+}
+
+body{
+    background-color: var(--Pale-blue);
+}
+
+.container{
+    display: grid;
+    align-items: center;
+    height: 90vh;
+    max-width: 560px;
+    margin: auto;
+}
+
+.banner{
+    background-color: #fff;
+}
+
+.banner img{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.orders{
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 0 0 20px 20px;
+}
+
+.orders h2{
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.orders p{
+    margin-top: 0px;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--Very-pale-blue);
+    padding: 15px;
+    border-radius: 15px;
+    margin: 40px 0;
+}
+
+.inline-flex{
+    display: inline-flex;
+}
+
+.inline-flex img{
+    margin-right: 20px;
+}
+
+.inline-flex p{
+    opacity: .6;
+}
+
+.flex a:hover{
+    color: var(--Bright-blue);
+}
+
+button{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.payment{
+    background-color: var(--Bright-blue);
+    color: var(--Very-pale-blue);
+    box-shadow: 2px;
+}
+
+.payment:hover{
+    background-color: var(--Bright-blue);
+    opacity: .9;
+}
+
+.cancel{
+    background-color: transparent;
+    color: #000;
+}
+.attribution{
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 559px) {
+    .container{
+        width: 100%;
+        max-width: 300px;
+        margin-top: 20px;
+    }
+}
