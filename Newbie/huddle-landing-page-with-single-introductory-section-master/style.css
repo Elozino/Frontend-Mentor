@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:ital,wght@0,600;1,400&display=swap");
+
+:root {
+  --Violet: hsl(257, 40%, 49%);
+  --Soft-Magenta: hsl(300, 69%, 71%);
+  --Poppins: "Poppins", sans-serif;
+  --Open-Sans: "Open Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--Violet);
+  overflow: hidden;
+}
+
+.container {
+  margin: 50px 90px;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  margin-top: 70px;
+  margin-bottom: 10px;
+}
+
+.img {
+  width: 50%;
+  margin-right: 80px;
+}
+
+.img img {
+  width: 100%;
+}
+.content {
+  width: 40%;
+}
+.content h1 {
+  color: #fff;
+  font-weight: 600;
+  font-family: var(--Poppins);
+  font-size: 2.7rem;
+}
+
+.content p {
+  color: #fff;
+  font-weight: 400;
+  font-family: var(--Open-Sans);
+  margin: 40px 0;
+  font-size: 1.1rem;
+}
+
+button {
+  padding: 15px 50px;
+  background-color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  color: var(--Violet);
+  width: 35%;
+  cursor: pointer;
+  text-align: center;
+}
+
+button:hover {
+  color: #fff;
+  background-color: var(--Soft-Magenta);
+}
+
+.socials {
+  text-align: end;
+}
+
+.socials a {
+  border: 3px solid #fff;
+  border-radius: 50%;
+  padding: 10px 12px;
+  margin: 0 10px;
+  color: #fff;
+}
+.attribution {
+  font-size: 15px;
+  text-align: center;
+  color: rgb(240, 192, 233);
+  font-family: var(--Open-Sans);
+}
+.attribution a {
+  color: var(--Soft-Magenta);
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        overflow: auto;
+    }
+    nav img{
+        width: 40%;
+    }
+  .container {
+    margin: 20px 35px;
+    height: auto;
+  }
+  main {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  .img {
+    width: 100%;
+    margin-right: 0px;
+  }
+  .content {
+    width: 100%;
+    text-align: center;
+  }
+  .content h1 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 60px;
+  }
+  .content p {
+    margin: 20px 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  button {
+    padding: 10px 60px;
+    font-size: 12px;
+    width: auto;
+    margin-bottom: 60px;
+  }
+  .socials {
+    text-align: center;
+  }
+  .socials a {
+    font-size: 10px;
+  }
+  .attribution{
+      margin-top: 30px;
+  }
+}
