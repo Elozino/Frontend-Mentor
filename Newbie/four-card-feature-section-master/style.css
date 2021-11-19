@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Font-size: 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: var(--Very-Light-Gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: var(--Font-size);
+}
+
+header{
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.pry-title{
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: var(--Very-Dark-Blue);
+}
+.sec-title{
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--Very-Dark-Blue);
+}
+
+header h4{
+    font-size: 1.6rem;
+    width: 60%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    color: var(--Grayish-Blue);
+}
+
+.card-wrapper{
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+   
+}
+
+.card-layer{
+    display: grid;
+    row-gap: 30px;
+}
+
+.card{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: var(--Very-Light-Gray);
+    padding: 30px;
+    border-top: 4px solid orangered;
+    border-radius: 10px;
+   
+}
+
+.card h2{
+    color: var(--Very-Dark-Blue);
+}
+
+.card p{
+    color: var(--Grayish-Blue);
+}
+
+.card div{
+    text-align: end;
+    margin-top: 20px;
+}
+
+.supervisor{
+    border-top: 5px solid var(--Cyan);
+}
+
+.team-builder{
+    border-top: 5px solid var(--Red);
+}
+
+.karma{
+    border-top: 5px solid var(--Orange);
+}
+
+.calculator{
+    border-top: 5px solid var(--Blue);
+}
+
+.attribution {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 30px;
+}
+.attribution a {
+  color: var(--Very-Dark-Blue);
+}
+
+
+@media screen and (max-width: 768px) {
+    body{
+        height: auto;
+        margin:  30px 0;
+    }
+    header{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .pry-title{
+        font-size: 1.65rem;
+        margin-bottom: 5px;
+    }
+    .sec-title{
+        font-weight: 600;
+        font-size: 1.65rem;
+        color: var(--Very-Dark-Blue);
+    }
+    header h4{
+        font-size: 1rem;
+        width: 90%;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        color: var(--Grayish-Blue);
+    }
+    .card{
+        padding: 20px;
+    }
+    .card-wrapper{
+        display: flex;
+        flex-direction: column;
+        column-gap: 30px;
+        align-items: center;
+        margin: 0;
+        width: 100%;
+    }
+
+    .card{
+        width: 80%;
+    }
+    .card-layer{
+        width: 80%;
+        margin: auto;
+    }
+    .card-layer div{
+        width: 100%;
+    }
+    .supervisor{
+        margin-bottom: 30px;
+    }
+    .calculator{
+        margin-top: 30px;
+    }
+}
