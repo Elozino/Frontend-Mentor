@@ -1,9 +1,13 @@
 import React from "react";
 
-function JobBoard({ job }) {
+function JobBoard({job , handleClickTag}) {
+  // You can destructure a level higher if you want only the name
+  const tags = [job.role, job.level, ...job.tools, ...job.languages];
+  // console.log(tags);
+
   return (
     <div
-      className={`lg:flex m-4 justify-between bg-white shadow-lg rounded 
+      className={`lg:flex m-4 md:mx-48 justify-between bg-white shadow-lg rounded 
     ${job.featured && " border-solid border-l-4 border-teal-500"}
    `}
     >
@@ -41,26 +45,13 @@ function JobBoard({ job }) {
       border-t-2 border-solid lg:border-t-0
       "
       >
-        <p className="bg-teal-100 rounded text-teal-500 px-4 py-1 mr-4 my-2">
-          {job.role}
-        </p>
-        <p className="bg-teal-100 rounded text-teal-500 px-4 py-1 mr-4 my-2">
-          {job.level}
-        </p>
-        {job.tools?.map((item, i) => (
+        {tags?.map((tag, i) => (
           <p
             key={i}
-            className="bg-teal-100 rounded text-teal-500 px-4 py-1 mr-4 my-2"
+            onClick={() => handleClickTag(tag)}
+            className="cursor-pointer bg-teal-100 rounded text-teal-500 px-4 py-1 mr-4 my-2"
           >
-            {item}
-          </p>
-        ))}
-        {job.languages?.map((item, i) => (
-          <p
-            key={i}
-            className="bg-teal-100 rounded text-teal-500 px-4 py-1 mr-4 my-2"
-          >
-            {item}
+            {tag}
           </p>
         ))}
       </div>

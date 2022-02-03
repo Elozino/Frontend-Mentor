@@ -1,112 +1,39 @@
-# Frontend Mentor - Job listings with filtering solution
+HOW TO BUILD THIS PROJECT
 
-This is a solution to the [Job listings with filtering challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+-- This is an intermediate frontendmentor project (while the UI might seeem easy the logic requires lots of thinking)
 
-## Table of contents
+## GUIDES
+-- Study the project such as the designs
+-- Study the workflow
+-- Take a break and think of how best to solve it
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+# LOOK UP THE TAILWIND CSS ONLINE FOR CONFIGURATION AND USAGE
 
-## Overview
+**PROJECT WALK THROUGH**
+-- In the App.js we imported the data.json given to us
+-- We created a state to check if the data is fetch from the data file (line 68) and display what was given
+-- We created a component to for the job board and passed in necessary props (line 73)
+-- Since the data.json was an array of object which we passed as props, we have to destructure the job (either by {jobs} or //by key value {tools role, etc...})
+-- We pass the props to the neccessary jsx structure and render them
 
-### The challenge
+*Hopefully your UI has been set; the next step is to implement the workflow*
+-- The job roles, tools, level, and languages are clickable and should show only jobs with those tags.
+-- To make this simpler in react make sure to use a good data structure to make it an iteratable array so the click event can be selected easily.
+-- Remember to set an error boundary and key to avoid react "shouting at you"
+-- Add a click event that should collect a prop i.e the tag clicked to be able to filter it.
+-- Notice we did not put the filter function in our JobBoard component, hence we need to pass the onClick function as a props the the component. If yours is in the same file, there is no need for the props.
 
-Users should be able to:
+*Creating the Filter function*
+-- In the design the filtered list is a seperate jsx component on its own with data depending on what the user clicked hence, we need to set a state to keep track of what was clicked. (Basically, state is to keep track of any update that is different from what was initially rendered). So we created a state (line 9)
 
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Filter job listings based on the categories
+-- We created a function to show what was clicked by the user (line 33). The function takes the tag clicked (thanks to the mapped array it is easier to get) as an argument (line 33). We also added a condition to make the filter tag display if it exist (shows) (line 34)
 
-### Screenshot
+-- To make the job filter based on what user clicked (i.e the filter function), we created a filter function that takes an instance of the jobs like we did in the job board component (line 16) and do a return that checks if it includes tag(tag: the clicked event) (i.e show/display if tag is true/present) (line 29).
 
-![](./screenshot.jpg)
+-- To remove the filter tags from filter we created an click event on them that takes an argument(jsx line: 58) and created a function which takes that argument (line 39) and update the state of the filter (line 9) to the filtered tags still remaining. (i.e in the current state, filter to check if the clicked/passedFilter is not the same in the current state. 
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
-### Links
-
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
-
-## My process
-
-### Built with
-
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
-### What I learned
-
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+~Explanation of how filter function works~
+if it is the same, remove else leave it or else, leave it.
+If it is (===) it will still show what the user clicked and remove the rest.
+If it is (!==) it will remove what the user clicked and leave the rest.
